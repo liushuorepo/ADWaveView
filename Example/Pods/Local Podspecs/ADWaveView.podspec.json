@@ -1,0 +1,22 @@
+{
+  "name": "ADWaveView",
+  "version": "0.1.0",
+  "summary": "A short description of ADWaveView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/13124832031@163.com/ADWaveView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "13124832031@163.com": "liushuo@alaxiaoyou.com"
+  },
+  "source": {
+    "git": "https://github.com/13124832031@163.com/ADWaveView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ADWaveView/Classes/**/*"
+}

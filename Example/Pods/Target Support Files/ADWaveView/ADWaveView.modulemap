@@ -1,0 +1,6 @@
+framework module ADWaveView {
+  umbrella header "ADWaveView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - ADWaveView (0.1.0)
+
+DEPENDENCIES:
+  - ADWaveView (from `../`)
+
+EXTERNAL SOURCES:
+  ADWaveView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ADWaveView: da9d1d0d2c20a7e7833477aa02fd81b6d6f7dc61
+
+PODFILE CHECKSUM: d7c4be8f1768cfc8358fb23c9591114c749c9d40
+
+COCOAPODS: 1.5.3
