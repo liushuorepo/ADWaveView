@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ADWaveView_Example' do
+  pod 'ADWaveView', :path => '../'
+
+  target 'ADWaveView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
