@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
 //    /// ADWave对象
 //    lazy var wave: ADWave = {
+//        let wave =
 //        return wave
 //    }()
 

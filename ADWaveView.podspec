@@ -32,6 +32,8 @@ This is an implementation of a simple wave animation. Thankyou!
 
   s.source_files = 'ADWaveView/Classes/**/*'
   
+  s.swift_version = '4.0'
+  
   # s.resource_bundles = {
   #   'ADWaveView' => ['ADWaveView/Assets/*.png']
   # }
