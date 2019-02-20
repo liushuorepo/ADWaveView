@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ADWave: UIView {
+public class ADWave: UIView {
 
     // 设置参数
     /// 浪高 默认为5
@@ -23,14 +23,14 @@ class ADWave: UIView {
     /// 遮罩浪颜色 默认为白色+0.5的透明度
     public var maskWaveColor: UIColor = UIColor.white.withAlphaComponent(0.5)
     /// 浮动的中间Y值的回调
-    private var waveFloatCenterYBlock: ((CGFloat)->())?
+    public var waveFloatCenterYBlock: ((CGFloat)->())?
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         initLayer()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         // fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
         initLayer()
@@ -61,7 +61,7 @@ class ADWave: UIView {
         
         // 浮动的中间Y值的回调
         let centerX = width / 2.0
-        let centerY = height * sin(waveCurve * centerX * CGFloat.pi + offset * CGFloat.pi)
+        let centerY = height * sin(waveCurve * centerX * CGFloat.pi / 180 + offset * CGFloat.pi / 180)
         if let block = waveFloatCenterYBlock {
             block(centerY)
         }
@@ -69,7 +69,7 @@ class ADWave: UIView {
         // 创建真浪
         createWave(waveShapeLayer: realWaveShapeLayer, width: width, height: height, offset: offset, waveColor: realWaveColor)
         // 创建遮罩浪
-        createWave(waveShapeLayer: maskWaveShapeLayer, width: width, height: height, offset: offset, waveColor: maskWaveColor)
+        createWave(waveShapeLayer: maskWaveShapeLayer, width: width, height: height, offset: offset * 0.7, waveColor: maskWaveColor)
     }
     /// 创建浪
     private func createWave(waveShapeLayer: CAShapeLayer, width: CGFloat, height: CGFloat, offset: CGFloat, waveColor: UIColor) {
@@ -82,7 +82,7 @@ class ADWave: UIView {
         // 创建中间点
         for x in 0..<Int(width) {
             // y = Asin（ωx+φ）
-            let y = height * sin(waveCurve * CGFloat(x) * CGFloat.pi + offset * CGFloat.pi)
+            let y = height * sin(waveCurve * CGFloat(x) * CGFloat.pi / 180 + offset * CGFloat.pi / 180)
             wavePath.addLine(to: CGPoint(x: CGFloat(x), y: CGFloat(y)))
         }
         
@@ -100,12 +100,12 @@ class ADWave: UIView {
     }
     
     /// 开始浪
-    private func startWave() {
+    public func startWave() {
         displayLink.add(to: RunLoop.current, forMode: .commonModes)
     }
     
-    /// 停止浪
-    private func endWave() {
+    /// 结束浪
+    public func endWave() {
         displayLink.invalidate()
     }
     
